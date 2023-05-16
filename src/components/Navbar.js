@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">VotingAPP</a>
+                <span className="navbar-brand mb-0 h1">VotingAPP</span>
             </div>
         </nav>
     )

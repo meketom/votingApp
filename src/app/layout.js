@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-bs-theme="dark">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <body className={inter.className}>
             <div className="container" data-bs-theme="light">
