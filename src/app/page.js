@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <main>
-      <h3>VotingAPP</h3>
+        <h1>HOME</h1>
     </main>
   )
 }
