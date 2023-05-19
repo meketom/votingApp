@@ -17,7 +17,7 @@ const deploy = async () => {
     const result = await new web3.eth.Contract(voting.abi)
         .deploy({ data: voting.evm.bytecode.object, arguments: ['La mejor votacion'] })
         .send({
-            gas: "1900000",
+            gas: "3000000",
             from: accounts[0]
         });
 
