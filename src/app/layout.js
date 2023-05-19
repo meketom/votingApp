@@ -1,5 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './globals.css'
-import 'bootstrap/dist/css/bootstrap.css'
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/Navbar";
 
@@ -16,8 +16,12 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <body className={inter.className}>
             <div className="container" data-bs-theme="light">
-                <Navbar/>
-                {children}
+                <div className="row">
+                    <Navbar/>
+                </div>
+                <div className="row">
+                    {children}
+                </div>
             </div>
         </body>
     </html>

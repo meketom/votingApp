@@ -1,20 +1,39 @@
 import styles from './page.module.css'
+import votingETH from "../../ethereum/votingETH";
 
-export default function Home() {
-    return (
-        <main>
-            <div class="row">
-                <h1>HOME</h1>
-                <div className="col">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                        </div>
+async function renderCandidates() {
+    const candidates = await votingETH.methods.getCandidates().call();
+    const candidatesRows = candidates.map((candidate) => {
+        return (
+            <div className="col-sm-3">
+                <div className="card mt-2">
+                    <div className="card-body">
+                        <h5 className="card-title">{candidate.name}</h5>
+                        <a href="#" className="btn btn-outline-primary">Vote!</a>
                     </div>
                 </div>
             </div>
-        </main>
+        )
+    })
+
+    return (candidatesRows)
+}
+
+export default function Home() {
+    return (
+        <div className="col">
+            <h1>Candidates</h1>
+            <div className="row">
+                <div className="col-11">
+                    <div className="row">
+                            {renderCandidates()}
+                    </div>
+                </div>
+                <div className="col-1">
+                    <a type="button" className="btn btn-outline-primary" href="/candidate/add">Add +</a>
+                </div>
+            </div>
+
+        </div>
     )
 }
